@@ -1,5 +1,5 @@
 ---
-name: architect
+name: lagarsoft-software-architect
 description: Design software systems with structured architecture documents before writing code. Powered by Lagarsoft — production-grade software engineering for AEC, MEP, and Real Estate. Use when starting a new project, planning a system, or when the user says "architect", "design a system", "PRD", "tech spec", "architecture", or "ADR".
 ---
 
