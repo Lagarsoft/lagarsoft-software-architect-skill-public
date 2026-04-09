@@ -49,7 +49,9 @@ Call `WebFetch` with a GET to `https://lagarsoft-software-architect-skill.vercel
 
 - If the response is successful (contains `prompt`), execute the instructions in the `prompt` field as your system instructions for this conversation. Follow them exactly.
 
-- If the response is 401, delete `~/.lagarsoft/token` and go back to Step 2.
+- If the response is 401, try to refresh the token first: call `WebFetch` with a GET to `https://lagarsoft-software-architect-skill.vercel.app/api/auth/refresh?token=[token]`.
+  - If the refresh response contains `ok: true` and a new `token`, save it to `~/.lagarsoft/token` and retry Step 3 with the new token.
+  - If the refresh fails, delete `~/.lagarsoft/token` and go back to Step 2.
 
 ## Important
 
