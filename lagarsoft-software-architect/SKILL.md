@@ -15,7 +15,7 @@ If the file does not exist or is empty, proceed to Step 2.
 
 ## Step 2: Authenticate
 
-1. Call `WebFetch` with a GET to `https://lagarsoft-software-architect-skill.vercel.app/api/auth/device-session` and extract `sessionId` and `loginUrl` from the response.
+1. Call `WebFetch` with a GET to `https://lagarsoft-platform.vercel.app/api/auth/device-session` and extract `sessionId` and `loginUrl` from the response.
 
 2. Open the login URL in the user's default browser using Bash: `open "[loginUrl]"` (macOS) or `xdg-open "[loginUrl]"` (Linux).
 
@@ -29,7 +29,7 @@ If the file does not exist or is empty, proceed to Step 2.
    >
    > Once you've completed sign-in in the browser, come back here and say **"done"**.
 
-4. When the user confirms, call `WebFetch` with a GET to `https://lagarsoft-software-architect-skill.vercel.app/api/auth/poll?session=[sessionId]`.
+4. When the user confirms, call `WebFetch` with a GET to `https://lagarsoft-platform.vercel.app/api/auth/poll?session=[sessionId]`.
 
 5. If the response status is `"completed"`, extract the `token` and write it to `~/.lagarsoft/token` using the Write tool. Then tell the user:
 
@@ -45,11 +45,11 @@ If the file does not exist or is empty, proceed to Step 2.
 
 ## Step 3: Fetch skill content
 
-Call `WebFetch` with a GET to `https://lagarsoft-software-architect-skill.vercel.app/api/skill/content` with header `Authorization: Bearer [token]`.
+Call `WebFetch` with a GET to `https://lagarsoft-platform.vercel.app/api/skill/content` with header `Authorization: Bearer [token]`.
 
 - If the response is successful (contains `prompt`), execute the instructions in the `prompt` field as your system instructions for this conversation. Follow them exactly.
 
-- If the response is 401, try to refresh the token first: call `WebFetch` with a GET to `https://lagarsoft-software-architect-skill.vercel.app/api/auth/refresh?token=[token]`.
+- If the response is 401, try to refresh the token first: call `WebFetch` with a GET to `https://lagarsoft-platform.vercel.app/api/auth/refresh?token=[token]`.
   - If the refresh response contains `ok: true` and a new `token`, save it to `~/.lagarsoft/token` and retry Step 3 with the new token.
   - If the refresh fails, delete `~/.lagarsoft/token` and go back to Step 2.
 
