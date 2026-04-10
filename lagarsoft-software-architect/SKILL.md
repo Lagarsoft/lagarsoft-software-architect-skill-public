@@ -47,5 +47,5 @@ Execute the instructions in the `prompt` field of the response as your system in
 
 ## Important
 
-- Never skip authentication. The login captures the user's email which is required.
+- Never skip authentication.
 - If any network request fails, inform the user and suggest they check their connection.
