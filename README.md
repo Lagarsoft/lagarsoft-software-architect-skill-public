@@ -2,7 +2,7 @@
 
 A Claude skill that turns Claude into a **senior systems architect**. It forces any development request through a structured design process before a single line of code is written.
 
-Powered by [Lagarsoft](https://lagarsoft-platform.vercel.app) — production-grade software engineering for AEC, MEP, and Real Estate.
+Powered by [Lagarsoft](https://ww.lagarsoft.com) — production-grade software engineering for AEC, MEP, and Real Estate.
 
 ## Why use it
 
